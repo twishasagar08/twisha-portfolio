@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Twisha V Sagar | Backend Software Engineer</title>
+<meta name="description" content="Twisha V Sagar, Backend Software Engineer in Bengaluru. Node.js, NestJS, TypeScript, PostgreSQL, Kafka. Payments, event-driven systems and REST APIs, with strong communication and ownership.">
+<meta property="og:title" content="Twisha V Sagar | Backend Software Engineer">
+<meta property="og:description" content="Backend engineer building payments, event-driven systems and REST APIs with NestJS, TypeScript and PostgreSQL.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23ff5a1f'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='30' font-weight='700' text-anchor='middle' fill='white'%3ETS%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light;--bg:#f7f6f2;--surface:#ffffff;--surface-2:#f0eee8;--line:#e3e0d8;--text:#191919;--text-2:#5c5c5c;--text-3:#8a8a8a;--accent:#257de0;--accent-soft:#e6f0fc;--accent-ink:#1a5fae;--muted-bar:#c9c6be;--ok:#008a17;--shadow:0 1px 2px rgba(0,0,0,.04),0 8px 24px rgba(0,0,0,.05)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;letter-spacing:-.01em;line-height:1.15}
+h2{font-size:clamp(28px,3.4vw,38px);margin-bottom:10px}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:10px}
+.lede{color:var(--text-2);max-width:680px;font-size:17px}
+section{padding:88px 0;border-top:1px solid var(--line)}
+nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-family:Fraunces,Georgia,serif;font-weight:700;font-size:19px;text-decoration:none}
+.links{display:flex;gap:22px;align-items:center}
+.links a{text-decoration:none;font-size:14px;color:var(--text-2);font-weight:500}
+.links a:hover{color:var(--text)}
+.theme{border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:999px;width:34px;height:34px;cursor:pointer;font-size:15px}
+@media (max-width:760px){.links a.hide-sm{display:none}}
+.hero{padding:96px 0 72px;border-top:0}
+.hero-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(40px,6vw,66px);margin:6px 0 18px}
+.hero h1 span{color:var(--accent)}
+.hero p.lede{font-size:19px}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 28px}
+.pill{font-size:13px;padding:6px 12px;border-radius:999px;background:var(--surface);border:1px solid var(--line);color:var(--text-2)}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:10px;font-weight:600;font-size:15px;text-decoration:none;border:1px solid var(--line);background:var(--surface);transition:transform .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.status{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:var(--text-2);background:var(--surface);border:1px solid var(--line);padding:6px 12px;border-radius:999px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 4px color-mix(in srgb,var(--ok) 20%,transparent)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:36px}
+.stat{padding:22px}
+.stat .num{font-family:Fraunces,Georgia,serif;font-size:42px;font-weight:700;line-height:1}
+.stat .label{font-size:14px;color:var(--text-2);margin-top:8px}
+@media (max-width:860px){.hero-grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}}
+.viz{padding:26px;margin-top:16px}
+.viz-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.viz-head h3{font-size:19px}
+.viz-head span{font-size:13px;color:var(--text-3)}
+.bar-row{display:grid;grid-template-columns:110px 1fr 56px;align-items:center;gap:14px;margin:12px 0;position:relative}
+.bar-row .name{font-size:14px;color:var(--text-2)}
+.track{height:28px;background:var(--surface-2);border-radius:4px;position:relative;cursor:default}
+.fill{height:100%;border-radius:0 4px 4px 0;width:0;transition:width 1.2s cubic-bezier(.2,.7,.2,1)}
+.fill.before{background:var(--muted-bar)}
+.fill.after{background:var(--accent)}
+.bar-row .val{font-weight:600;font-variant-numeric:tabular-nums}
+.axis{display:grid;grid-template-columns:110px 1fr 56px;gap:14px;font-size:12px;color:var(--text-3)}
+.axis .ticks{display:flex;justify-content:space-between}
+.tip{position:fixed;pointer-events:none;background:var(--text);color:var(--bg);font-size:13px;padding:8px 10px;border-radius:8px;opacity:0;transition:opacity .12s;z-index:50;max-width:240px}
+.timeline{margin-top:36px;position:relative;padding-left:28px}
+.timeline:before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.job{position:relative;padding:24px 26px;margin-bottom:20px}
+.job:before{content:"";position:absolute;left:-28px;top:30px;width:16px;height:16px;border-radius:50%;background:var(--surface);border:3px solid var(--accent)}
+.job-head{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px 16px;margin-bottom:4px}
+.job-head h3{font-size:21px}
+.when{font-size:14px;color:var(--text-3);font-variant-numeric:tabular-nums}
+.org{color:var(--text-2);font-size:15px;margin-bottom:14px}
+ul.points{list-style:none}
+ul.points li{position:relative;padding-left:20px;margin:8px 0;color:var(--text-2)}
+ul.points li:before{content:"";position:absolute;left:2px;top:10px;width:7px;height:7px;border-radius:2px;background:var(--accent)}
+ul.points b{color:var(--text);font-weight:600}
+.feature{padding:30px;margin-top:36px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 6px}
+.tag{font-size:12px;font-weight:500;padding:4px 10px;border-radius:6px;background:var(--accent-soft);color:var(--accent-ink)}
+.flow{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin:28px 0 8px;counter-reset:step}
+.step{position:relative;padding:16px 14px;border-radius:12px;background:var(--surface-2);border:1px solid var(--line);font-size:14px;cursor:default;transition:border-color .15s,transform .15s}
+.step:hover,.step:focus{border-color:var(--accent);transform:translateY(-2px);outline:none}
+.step .n{counter-increment:step;font-size:12px;font-weight:700;color:var(--accent-ink);margin-bottom:6px}
+.step .n:before{content:"0" counter(step)}
+.step b{display:block;font-size:15px;margin-bottom:4px}
+.step p{color:var(--text-2);font-size:13px;line-height:1.45}
+.step:not(:last-child):after{content:"";position:absolute;right:-9px;top:50%;width:8px;height:2px;background:var(--accent)}
+.step.alert{border-color:color-mix(in srgb,#f47230 60%,var(--line))}
+@media (max-width:900px){.flow{grid-template-columns:repeat(2,1fr)}.step:after{display:none}}
+.arch-wrap{margin-top:26px;padding:20px;border-radius:12px;background:var(--surface-2);border:1px solid var(--line);overflow-x:auto}
+.arch-wrap svg{min-width:720px;width:100%;height:auto;display:block}
+.arch-wrap svg text{font-family:Inter,system-ui,sans-serif}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:16px 36px;margin-top:26px}
+@media (max-width:760px){.cols{grid-template-columns:1fr}}
+.cols h4{font-size:15px;margin-bottom:4px}
+.cols p{font-size:14px;color:var(--text-2)}
+.quality{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:26px}
+.q{padding:16px;border-radius:12px;border:1px solid var(--line);text-align:center}
+.q .num{font-family:Fraunces,Georgia,serif;font-size:30px;font-weight:700;color:var(--accent-ink)}
+.q .label{font-size:13px;color:var(--text-2)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}
+@media (max-width:760px){.grid2{grid-template-columns:1fr}}
+.proj{padding:26px}
+.proj h3{font-size:20px;margin-bottom:6px}
+.proj .when{display:block;margin-bottom:10px}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
+@media (max-width:860px){.skills{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.skills{grid-template-columns:1fr}}
+.sk{padding:22px}
+.sk h4{font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-3);margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:13px;padding:5px 10px;border-radius:6px;border:1px solid var(--line);background:var(--bg)}
+.how{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
+@media (max-width:860px){.how{grid-template-columns:1fr}}
+.how .card{padding:24px}
+.icon{width:40px;height:40px;border-radius:10px;background:var(--accent-soft);display:grid;place-items:center;margin-bottom:14px}
+.icon svg{width:20px;height:20px;stroke:var(--accent-ink);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.how h3{font-size:19px;margin-bottom:8px}
+.how p{font-size:15px;color:var(--text-2)}
+.edu{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;padding:26px;margin-top:28px;align-items:center}
+.edu h3{font-size:20px}
+.edu .gpa{font-family:Fraunces,Georgia,serif;font-size:34px;font-weight:700;color:var(--accent-ink);line-height:1}
+.edu .gpa small{font-family:Inter,sans-serif;font-size:13px;font-weight:500;color:var(--text-3);display:block;margin-top:4px;text-align:right}
+.contact{text-align:center}
+.contact .cta{justify-content:center;margin-top:26px}
+footer{padding:32px 0;text-align:center;font-size:13px;color:var(--text-3);border-top:1px solid var(--line)}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.fill{transition:none}html{scroll-behavior:auto}}
+:root,:root[data-theme="dark"],:root[data-theme="light"]{color-scheme:dark;--bg:#0a0a0a;--surface:#141414;--surface-2:#1b1b1b;--line:#2a2a2a;--text:#f5f5f5;--text-2:#bdbdbd;--text-3:#8c8c8c;--accent:#ff5a1f;--accent-soft:rgba(255,90,31,.12);--accent-ink:#ff8a4c;--muted-bar:#3a3a3a;--ok:#ff7a1a;--shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.35);--red:#e63946;--redor:#ff4d2e;--orange:#ff7a1a;--amber:#ffa62b;--grad:linear-gradient(120deg,#e63946 0%,#ff5a1f 50%,#ffa62b 100%)}
+.theme{display:none}
+body{background:radial-gradient(900px 520px at 10% -8%,rgba(230,57,70,.16),transparent 60%),radial-gradient(800px 520px at 100% 0%,rgba(255,122,26,.12),transparent 60%),var(--bg);background-attachment:fixed}
+nav{background:rgba(10,10,10,.8)}
+.brand{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.links a:hover{color:var(--orange)}
+.hero h1 span{background:linear-gradient(120deg,#e63946,#ff7a1a,#ffa62b,#e63946);background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 7s linear infinite}
+@keyframes shine{to{background-position:200% center}}
+.status{background:rgba(255,122,26,.08);border-color:rgba(255,122,26,.3)}
+.dot{background:var(--orange);box-shadow:0 0 0 4px rgba(255,122,26,.25)}
+.btn{background:var(--surface);border-color:var(--line);color:var(--text)}
+.btn:hover{border-color:var(--orange)}
+.btn.primary{background:var(--grad);border:0;color:#fff;box-shadow:0 8px 26px rgba(255,77,46,.35)}
+.pill{background:rgba(20,20,20,.7);border-color:rgba(255,122,26,.3);color:var(--text)}
+.ticker{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#0f0f0f;padding:14px 0;white-space:nowrap}
+.ticker-track{display:inline-flex;animation:scroll 36s linear infinite;font-weight:600;font-size:15px;color:var(--text-2)}
+.ticker-track span{padding:0 22px;position:relative}
+.ticker-track span:after{content:"";position:absolute;right:-3px;top:50%;width:6px;height:6px;margin-top:-3px;border-radius:50%;background:var(--redor)}
+.ticker-track span:nth-child(3n+1){color:var(--orange)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+.eyebrow{display:inline-block;padding:4px 10px;border-radius:999px;background:rgba(255,90,31,.12);color:var(--accent-ink)}
+.h1c{--hue:var(--red)}.h2c{--hue:var(--redor)}.h3c{--hue:var(--orange)}.h4c{--hue:var(--amber)}
+.stat{position:relative;overflow:hidden;transition:transform .2s,border-color .2s}
+.stat:hover{transform:translateY(-4px);border-color:var(--hue)}
+.stat:before{content:"";position:absolute;left:0;top:0;right:0;height:3px;background:var(--hue)}
+.stat .num{color:var(--hue)}
+.fill.after{background:var(--grad)}
+.timeline:before{background:linear-gradient(var(--red),var(--orange))}
+.job:before{border-color:var(--orange)}
+.job:hover{border-color:rgba(255,122,26,.4)}
+ul.points li:before{background:var(--orange)}
+ul.points li:nth-child(odd):before{background:var(--red)}
+.tag{background:rgba(255,90,31,.12);color:var(--accent-ink)}
+.feature{position:relative;overflow:hidden}
+.feature:before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:var(--grad)}
+.step{border-top:3px solid var(--hue);background:var(--surface-2)}
+.step .n{color:var(--hue)}
+.step:hover,.step:focus{border-color:var(--hue);box-shadow:0 10px 24px rgba(255,77,46,.18)}
+.step:not(:last-child):after{background:var(--hue)}
+.step.alert{background:rgba(230,57,70,.12)}
+.arch-wrap{background:#101010}
+.q{background:var(--surface-2)}
+.q .num{color:var(--orange)}
+.proj{transition:transform .2s,border-color .2s}
+.proj:hover,.how .card:hover{transform:translateY(-4px);border-color:rgba(255,122,26,.45)}
+.proj h3{color:var(--orange)}
+.how .card{transition:transform .2s,border-color .2s}
+.icon{background:rgba(255,90,31,.12)}
+.icon svg{stroke:var(--orange)}
+.sk h4{color:var(--accent-ink)}
+.chip{background:#101010;border-color:#2e2e2e}
+.chip:hover{border-color:var(--orange);color:var(--orange)}
+.edu{border-color:rgba(255,122,26,.3)}
+.edu .gpa{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.contact-card{padding:56px 24px;border-radius:24px;background:linear-gradient(135deg,#1a0a0a,#2a0f08);border:1px solid rgba(255,90,31,.35);box-shadow:0 20px 60px rgba(230,57,70,.2)}
+.contact-card .btn{background:var(--surface)}
+.contact-card .btn.primary{background:var(--grad)}
+.hero.photo-hero{min-height:92vh;display:flex;align-items:center;padding:110px 0 90px;background:linear-gradient(90deg,rgba(10,10,10,.94) 0%,rgba(10,10,10,.78) 38%,rgba(10,10,10,.2) 68%,rgba(10,10,10,.35) 100%),linear-gradient(180deg,rgba(10,10,10,0) 70%,#0a0a0a 100%),radial-gradient(700px 500px at 0% 20%,rgba(230,57,70,.25),transparent 60%),url('hero.jpg');background-size:auto,auto,auto,140% auto;background-position:0 0,0 0,0 0,0% 72%;background-repeat:no-repeat}
+.photo-hero>.wrap{width:100%}
+.photo-hero .hero-grid{grid-template-columns:1fr;max-width:1080px}
+.photo-hero .hero-text{max-width:600px}
+.photo-hero .lede{color:#d6d6d6}
+@media (max-width:860px){.hero.photo-hero{min-height:100vh;align-items:flex-end;padding-top:52vh;background:linear-gradient(180deg,rgba(10,10,10,.1) 0%,rgba(10,10,10,.25) 30%,rgba(10,10,10,.85) 50%,#0a0a0a 62%),url('hero.jpg') #0a0a0a;background-size:auto,200% auto;background-position:0 0,51% -300px}}
+@media (prefers-reduced-motion:reduce){.ticker-track,.hero h1 span{animation:none}}
+</style>
+</head>
+<body>
+<nav>
+<div class="wrap">
+<a class="brand" href="#top">Twisha V Sagar</a>
+<div class="links">
+<a href="#impact" class="hide-sm">Impact</a>
+<a href="#experience" class="hide-sm">Experience</a>
+<a href="#projects" class="hide-sm">Projects</a>
+<a href="#skills" class="hide-sm">Skills</a>
+<a href="#contact">Contact</a>
+<button class="theme" id="theme" aria-label="Toggle dark mode" title="Toggle theme">&#9680;</button>
+</div>
+</div>
+</nav>
+<header class="hero photo-hero" id="top">
+<div class="wrap hero-grid">
+<div class="reveal hero-text">
+<span class="status"><span class="dot"></span>Open to roles &middot; available from 1 December 2026</span>
+<h1>Backend engineer who <span>owns features</span> from requirement to production.</h1>
+<p class="lede">I build payments, event-driven systems and REST APIs with NestJS, TypeScript and PostgreSQL, and I'm the person who reads the requirements closely, flags gaps early, and keeps everyone aligned.</p>
+<div class="pills">
+<span class="pill">Node.js &amp; NestJS</span><span class="pill">TypeScript</span><span class="pill">PostgreSQL</span><span class="pill">Kafka</span><span class="pill">Microservices</span><span class="pill">Testing</span>
+</div>
+<div class="cta">
+<a class="btn primary" href="mailto:twishagar8@gmail.com">Email me</a>
+<a class="btn" href="https://www.linkedin.com/in/twishasagar" target="_blank" rel="noopener">LinkedIn &#8599;</a>
+</div>
+</div>
+</div>
+</header>
+<div class="ticker" aria-hidden="true"><div class="ticker-track"><span>Node.js</span><span>NestJS</span><span>TypeScript</span><span>PostgreSQL</span><span>Kafka</span><span>Redis</span><span>Elasticsearch</span><span>Docker</span><span>Kubernetes</span><span>AWS</span><span>OCPP 1.6</span><span>Jest</span><span>REST APIs</span><span>Microservices</span><span>Node.js</span><span>NestJS</span><span>TypeScript</span><span>PostgreSQL</span><span>Kafka</span><span>Redis</span><span>Elasticsearch</span><span>Docker</span><span>Kubernetes</span><span>AWS</span><span>OCPP 1.6</span><span>Jest</span><span>REST APIs</span><span>Microservices</span></div></div>
+<section id="impact">
+<div class="wrap">
+<div class="eyebrow reveal">Impact in numbers</div>
+<h2 class="reveal">What a year of backend work added up to</h2>
+<div class="stats">
+<div class="card stat reveal h1c"><div class="num" data-count="3">0</div><div class="label">microservices in one feature I owned end to end</div></div>
+<div class="card stat reveal h2c"><div class="num" data-count="40" data-prefix="~">0</div><div class="label">APIs on a shared search framework across 4 services</div></div>
+<div class="card stat reveal h3c"><div class="num" data-count="163">0</div><div class="label">end-to-end checks, plus 82 unit tests, on the billing system</div></div>
+<div class="card stat reveal h4c"><div class="num" data-count="5">0</div><div class="label">NestJS services in the unit testing initiative I co-led</div></div>
+</div>
+<div class="card viz reveal" id="coverage">
+<div class="viz-head">
+<h3>Code coverage, unit testing initiative</h3>
+<span>Co-led across 5 NestJS services with Jest</span>
+</div>
+<div class="bar-row" data-tip="Before the initiative: about 30% coverage">
+<div class="name">Before</div>
+<div class="track"><div class="fill before" data-w="30"></div></div>
+<div class="val">30%</div>
+</div>
+<div class="bar-row" data-tip="After the initiative: 80% coverage, up 50 points">
+<div class="name">After</div>
+<div class="track"><div class="fill after" data-w="80"></div></div>
+<div class="val">80%</div>
+</div>
+<div class="axis"><span></span><div class="ticks"><span>0%</span><span>25%</span><span>50%</span><span>75%</span><span>100%</span></div><span></span></div>
+</div>
+</div>
+</section>
+<section id="experience">
+<div class="wrap">
+<div class="eyebrow reveal">Experience</div>
+<h2 class="reveal">Where I've worked</h2>
+<div class="timeline">
+<article class="card job reveal">
+<div class="job-head"><h3>Backend Developer, Full-time</h3><span class="when">Oct 2025 to Nov 2026</span></div>
+<div class="org">Elocity Technologies India Pvt Limited &middot; Bengaluru</div>
+<ul class="points">
+<li>Led <b>Charger Licence Fee Management</b> across <b>3 microservices</b>, eliminating manual fee collection for residential EV chargers.</li>
+<li>Assessed a <b>mid-project requirements revision</b> across 12 feature areas, flagging gaps early and re-scoping with my senior.</li>
+<li>Authored implementation plans, test reports and <b>API contracts</b> for the mobile and web teams.</li>
+<li>Co-led <b>unit testing</b> across 5 NestJS services with Jest, raising coverage from <b>30% to 80%</b>.</li>
+<li>Debugged a <b>cross-service defect</b> so top-up prompts show users the exact shortfall, not the full fee.</li>
+<li>Built backend APIs for the <b>reservation module</b> and the <b>private location access</b> flow used by the web and mobile apps.</li>
+<li>Ran <b>knowledge-transfer sessions</b> for the team on the search framework and API key authentication.</li>
+</ul>
+</article>
+<article class="card job reveal">
+<div class="job-head"><h3>Data Analyst Intern</h3><span class="when">Sep 2025 to Nov 2025</span></div>
+<div class="org">HTC &middot; Remote</div>
+<ul class="points">
+<li>Evaluated operational datasets from <b>2 transport services</b> across service quality, efficiency and coverage.</li>
+<li>Presented <b>data-driven recommendations</b> to stakeholders in a written report and presentation.</li>
+</ul>
+</article>
+</div>
+</div>
+</section>
+<section id="projects">
+<div class="wrap">
+<div class="eyebrow reveal">Featured project</div>
+<h2 class="reveal">Charger Licence Fee Management</h2>
+<p class="lede reveal">Recurring billing and access control for privately assigned EV chargers in residential buildings. Fees were collected by hand, with no reminders, no enforcement and no record of user consent. I owned the feature end to end, from requirement analysis to live testing on a real charger.</p>
+<div class="card feature reveal">
+<div class="tags">
+<span class="tag">TypeScript</span><span class="tag">NestJS</span><span class="tag">TypeORM</span><span class="tag">PostgreSQL + RLS</span><span class="tag">Kafka + Avro</span><span class="tag">Redis</span><span class="tag">OCPP 1.6</span><span class="tag">AWS SNS</span><span class="tag">Kubernetes</span><span class="tag">Jest</span>
+</div>
+<h3 style="margin-top:22px;font-size:19px">The licence lifecycle</h3>
+<div class="flow" role="list">
+<div class="step h1c" role="listitem" tabindex="0"><div class="n"></div><b>Configure</b><p>Monthly or yearly fee with bounds; edits apply at next renewal.</p></div>
+<div class="step h2c" role="listitem" tabindex="0"><div class="n"></div><b>Bill in advance</b><p>On the 1st, in the site's timezone, from the primary then secondary wallets.</p></div>
+<div class="step h3c" role="listitem" tabindex="0"><div class="n"></div><b>Remind &amp; retry</b><p>Daily retries plus email, push and in-app alerts.</p></div>
+<div class="step h4c" role="listitem" tabindex="0"><div class="n"></div><b>Grace period</b><p>Time to pay before any access is affected.</p></div>
+<div class="step alert h1c" role="listitem" tabindex="0"><div class="n"></div><b>Block remotely</b><p>Charger set inoperative over OCPP via Kafka.</p></div>
+<div class="step h4c" role="listitem" tabindex="0"><div class="n"></div><b>Auto-reinstate</b><p>Payment or wallet top-up unblocks it automatically.</p></div>
+</div>
+<div class="arch-wrap" aria-label="Architecture diagram">
+<svg viewBox="0 0 900 260" role="img" aria-labelledby="archTitle">
+<title id="archTitle">Architecture: mobile app and web portal call the CPMS service, which talks to the Payment service, PostgreSQL, Redis and Kafka; Kafka carries OCPP commands to chargers</title>
+<defs>
+<marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--text-3)"/></marker>
+</defs>
+<g font-size="13" fill="var(--text)">
+<rect x="20" y="40" width="150" height="54" rx="10" fill="var(--surface)" stroke="var(--line)"/>
+<text x="95" y="72" text-anchor="middle">Mobile app</text>
+<rect x="20" y="166" width="150" height="54" rx="10" fill="var(--surface)" stroke="var(--line)"/>
+<text x="95" y="198" text-anchor="middle">Web portal</text>
+<rect x="250" y="80" width="190" height="100" rx="12" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="2"/>
+<text x="345" y="118" text-anchor="middle" font-weight="700">CPMS service</text>
+<text x="345" y="140" text-anchor="middle" font-size="12" fill="var(--text-2)">billing engine, jobs,</text>
+<text x="345" y="156" text-anchor="middle" font-size="12" fill="var(--text-2)">consent, invoicing</text>
+<rect x="530" y="20" width="160" height="50" rx="10" fill="var(--surface)" stroke="var(--line)"/>
+<text x="610" y="41" text-anchor="middle" font-weight="600">Payment service</text>
+<text x="610" y="58" text-anchor="middle" font-size="11" fill="var(--text-2)">event-sourced wallet</text>
+<rect x="530" y="88" width="160" height="40" rx="10" fill="var(--surface)" stroke="var(--line)"/>
+<text x="610" y="113" text-anchor="middle">PostgreSQL + RLS</text>
+<rect x="530" y="140" width="160" height="40" rx="10" fill="var(--surface)" stroke="var(--line)"/>
+<text x="610" y="165" text-anchor="middle">Redis locks</text>
+<rect x="530" y="194" width="160" height="50" rx="10" fill="var(--surface)" stroke="var(--line)"/>
+<text x="610" y="215" text-anchor="middle" font-weight="600">Kafka + Avro</text>
+<text x="610" y="232" text-anchor="middle" font-size="11" fill="var(--text-2)">commands to chargers</text>
+<rect x="782" y="194" width="110" height="50" rx="10" fill="var(--surface)" stroke="var(--line)"/>
+<text x="837" y="215" text-anchor="middle" font-weight="600">EV charger</text>
+<text x="837" y="232" text-anchor="middle" font-size="11" fill="var(--text-2)">OCPP 1.6</text>
+<rect x="782" y="20" width="110" height="50" rx="10" fill="var(--surface)" stroke="var(--line)"/>
+<text x="837" y="41" text-anchor="middle" font-weight="600">Notifications</text>
+<text x="837" y="58" text-anchor="middle" font-size="11" fill="var(--text-2)">email, SNS push</text>
+</g>
+<g stroke="var(--text-3)" stroke-width="1.6" fill="none" marker-end="url(#ah)">
+<path d="M170,67 C210,67 215,110 248,112"/>
+<path d="M170,193 C210,193 215,150 248,150"/>
+<path d="M440,100 C480,100 490,45 528,45"/>
+<path d="M440,115 L528,108"/>
+<path d="M440,140 L528,158"/>
+<path d="M440,162 C480,162 490,219 528,219"/>
+<path d="M690,219 L780,219"/>
+<path d="M690,40 L780,40"/>
+</g>
+<g font-size="10" fill="var(--text-3)">
+<text x="452" y="86">debit, 409 on repeat</text>
+<text x="694" y="209">ChangeAvailability</text>
+</g>
+</svg>
+</div>
+<div class="cols">
+<div><h4>No double charges, ever</h4><p>Each billing period gets a deterministic UUID v5 transaction id. The wallet rejects repeats with HTTP 409, so retries, crashes and concurrent triggers can never charge a resident twice.</p></div>
+<div><h4>Self-healing charger state</h4><p>The system tracks desired versus confirmed charger state and re-sends lost OCPP commands automatically. Admins can unblock for 24 hours; it re-blocks if still unpaid.</p></div>
+<div><h4>Safe scheduled jobs</h4><p>A daily billing job and a 10-minute sweep run on one pod via leader election and Redis locks. Every step is crash-safe and restartable.</p></div>
+<div><h4>Consent and invoicing</h4><p>Versioned Terms and Conditions with append-only consent records, enforced at session start, plus PDF invoices with signed download links.</p></div>
+</div>
+<div class="quality">
+<div class="q"><div class="num">82</div><div class="label">unit tests for the feature</div></div>
+<div class="q"><div class="num">163</div><div class="label">end-to-end checks on real databases</div></div>
+<div class="q"><div class="num">1</div><div class="label">live charger verified over OCPP</div></div>
+</div>
+</div>
+<div class="eyebrow reveal" style="margin-top:56px">More projects</div>
+<div class="grid2">
+<article class="card proj reveal">
+<h3>API Key Gateway Authentication</h3>
+<span class="when">September 2026 &middot; Istio, Lua, Docker</span>
+<ul class="points">
+<li>Built a <b>4-stage API key lifecycle</b>: generation, validation, activation and deactivation.</li>
+<li>Enforced keys with Istio and Lua filters at the gateway, <b>blocking unauthorised traffic</b> before it reaches services.</li>
+<li>Owned it solo from planning and edge cases to <b>production rollout</b>, then trained the team.</li>
+</ul>
+</article>
+<article class="card proj reveal">
+<h3>Unified Search Framework</h3>
+<span class="when">June 2026 &middot; Node.js, NestJS, Elasticsearch</span>
+<ul class="points">
+<li>Designed a configurable <b>Elasticsearch</b> framework where each service declares its search modes, parameters and keys.</li>
+<li>Supports <b>multi-field search</b> in a single request.</li>
+<li>Rolled out to <b>4 services and about 40 APIs</b>, replacing duplicated search code with one request format.</li>
+</ul>
+</article>
+</div>
+</div>
+</section>
+<section id="how">
+<div class="wrap">
+<div class="eyebrow reveal">How I work</div>
+<h2 class="reveal">More than writing code</h2>
+<div class="how">
+<div class="card reveal">
+<div class="icon"><svg viewBox="0 0 24 24"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9"/></svg></div>
+<h3>Ownership</h3>
+<p>Big features were handed to me end to end. I map every edge case, propose several solutions to seniors, and see the chosen one through to live testing.</p>
+</div>
+<div class="card reveal">
+<div class="icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
+<h3>Interpreting requirements</h3>
+<p>When requirements changed mid-project, I analysed the new document, identified the gaps and re-scoped the work before it turned into rework.</p>
+</div>
+<div class="card reveal">
+<div class="icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9"/><path d="M16 3.1a4 4 0 0 1 0 7.8"/></svg></div>
+<h3>Communication</h3>
+<p>I write the plans, API contracts and test reports other teams build on, and run knowledge-transfer sessions so everyone understands what shipped.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="skills">
+<div class="wrap">
+<div class="eyebrow reveal">Skills</div>
+<h2 class="reveal">Toolkit</h2>
+<div class="skills">
+<div class="card sk reveal"><h4>Languages</h4><div class="chips"><span class="chip">TypeScript</span><span class="chip">JavaScript</span><span class="chip">SQL</span><span class="chip">Python</span><span class="chip">C</span><span class="chip">C++</span></div></div>
+<div class="card sk reveal"><h4>Backend</h4><div class="chips"><span class="chip">Node.js</span><span class="chip">NestJS</span><span class="chip">TypeORM</span><span class="chip">REST APIs</span><span class="chip">Microservices</span><span class="chip">Event-driven architecture</span><span class="chip">API Gateway</span><span class="chip">Istio</span><span class="chip">Lua</span></div></div>
+<div class="card sk reveal"><h4>Data &amp; infrastructure</h4><div class="chips"><span class="chip">PostgreSQL</span><span class="chip">Elasticsearch</span><span class="chip">Redis</span><span class="chip">Kafka</span><span class="chip">Firebase</span><span class="chip">Docker</span><span class="chip">Kubernetes</span><span class="chip">AWS</span><span class="chip">OCPP 1.6</span></div></div>
+<div class="card sk reveal"><h4>Testing &amp; tools</h4><div class="chips"><span class="chip">Jest</span><span class="chip">Unit testing</span><span class="chip">Debugging</span><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">Postman</span><span class="chip">Figma</span></div></div>
+<div class="card sk reveal"><h4>Communication &amp; leadership</h4><div class="chips"><span class="chip">Requirement analysis</span><span class="chip">Technical documentation</span><span class="chip">Stakeholder communication</span><span class="chip">Decision making</span><span class="chip">Knowledge transfer</span></div></div>
+<div class="card sk reveal"><h4>Core CS &amp; business</h4><div class="chips"><span class="chip">Data structures &amp; algorithms</span><span class="chip">System design</span><span class="chip">Data analysis</span><span class="chip">Business strategy</span><span class="chip">Excel</span><span class="chip">PowerPoint</span></div></div>
+</div>
+<div class="card edu reveal">
+<div>
+<div class="eyebrow" style="margin-bottom:6px">Education</div>
+<h3>B.E. in Computer Science and Business Systems</h3>
+<div style="color:var(--text-2);font-size:15px">JSS Science and Technology University (SJCE), Mysuru &middot; 2022 to 2026</div>
+</div>
+<div class="gpa">9.35<small>CGPA out of 10</small></div>
+</div>
+</div>
+</section>
+<section id="contact" class="contact">
+<div class="wrap"><div class="contact-card">
+<div class="eyebrow reveal">Contact</div>
+<h2 class="reveal">Let's talk</h2>
+<p class="lede reveal" style="margin:0 auto">I'm looking for backend or software engineering roles in Bengaluru or remote, and can join from 1 December 2026.</p>
+<div class="cta reveal">
+<a class="btn primary" href="mailto:twishagar8@gmail.com">twishagar8@gmail.com</a>
+<a class="btn" href="https://www.linkedin.com/in/twishasagar" target="_blank" rel="noopener">LinkedIn &#8599;</a>
+</div>
+</div></div>
+</section>
+<footer>&copy; 2026 Twisha V Sagar &middot; Bengaluru, India</footer>
+<div class="tip" id="tip" role="tooltip"></div>
+<script>
+(function(){
+var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+function count(el){
+var target=+el.dataset.count, pre=el.dataset.prefix||'';
+if(reduce){el.textContent=pre+target;return;}
+var t0=null, dur=1100;
+function tick(t){ if(!t0)t0=t; var p=Math.min((t-t0)/dur,1); el.textContent=pre+Math.round(target*(1-Math.pow(1-p,3))); if(p<1) requestAnimationFrame(tick); }
+requestAnimationFrame(tick);
+}
+var io = new IntersectionObserver(function(entries){
+entries.forEach(function(e){
+if(!e.isIntersecting) return;
+e.target.classList.add('in');
+e.target.querySelectorAll('[data-count]').forEach(count);
+e.target.querySelectorAll('.fill').forEach(function(f){ f.style.width=f.dataset.w+'%'; });
+io.unobserve(e.target);
+});
+},{threshold:.15});
+document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+var tip=document.getElementById('tip');
+document.querySelectorAll('.bar-row').forEach(function(r){
+r.addEventListener('mousemove',function(ev){ tip.textContent=r.dataset.tip; tip.style.left=(ev.clientX+14)+'px'; tip.style.top=(ev.clientY+14)+'px'; tip.style.opacity=1; });
+r.addEventListener('mouseleave',function(){ tip.style.opacity=0; });
+});
+})();
+</script>
+</body>
+</html>
